@@ -1,15 +1,10 @@
-import {
-  createEntityAdapter,
-  createSlice,
-} from '@reduxjs/toolkit'
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
-
-
 const groupAdapter = createEntityAdapter<State.Group>({
-    selectId: (Group: State.Group) => Group.id,
-    sortComparer: (a, b) => a.title.localeCompare(b.title),
-})
+  selectId: (Group: State.Group) => Group.id,
+  sortComparer: (a, b) => a.title.localeCompare(b.title),
+});
 
 const initialState = groupAdapter.getInitialState();
 
@@ -22,18 +17,16 @@ const GroupSlice = createSlice({
     groupAdded: groupAdapter.addOne,
     groupsReceived(state, action) {
       // Or, call them as "mutating" helpers in a case reducer
-      groupAdapter.setAll(state, action.payload)
+      groupAdapter.setAll(state, action.payload);
     },
   },
-})
-
-
+});
 
 export const {
   selectById: selectGroupById,
   selectIds: selectGroupIds,
   selectEntities: selectGroupEntities,
   selectAll: selectAllGroups,
-  selectTotal: selectTotalGroups
-} = groupAdapter.getSelectors<RootState>((state) => state.groups)
-export default GroupSlice
+  selectTotal: selectTotalGroups,
+} = groupAdapter.getSelectors<RootState>((state) => state.groups);
+export default GroupSlice;

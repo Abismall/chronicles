@@ -4,7 +4,7 @@ import { selectChapterIds } from './chapterSlice';
 import ChapterExcerpt from './chapterExcerpt';
 
 const ChapterList = (): JSX.Element => {
-  const { isLoading, isSuccess, isError, error } =
+  const { isLoading, isSuccess, isError, error, data } =
     useGetChaptersQuery('getChapters');
 
   const chapterIds = useAppSelector(selectChapterIds);

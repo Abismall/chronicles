@@ -1,18 +1,12 @@
-import {
-  createEntityAdapter,
-  createSlice,
-} from '@reduxjs/toolkit'
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
+export const chapterAdapter = createEntityAdapter<State.Chapter>({
+  selectId: (chapter) => chapter.id,
+  sortComparer: (a, b) => a.title.localeCompare(b.title),
+});
 
-
-
-const chapterAdapter = createEntityAdapter<State.Chapter>({
-    selectId: (chapter) => chapter.id,
-    sortComparer: (a, b) => a.title.localeCompare(b.title),
-})
-
-const initialState = chapterAdapter.getInitialState();
+export const initialState = chapterAdapter.getInitialState();
 
 const chapterSlice = createSlice({
   name: 'chapters',
@@ -23,18 +17,16 @@ const chapterSlice = createSlice({
     chapterAdded: chapterAdapter.addOne,
     chaptersReceived(state, action) {
       // Or, call them as "mutating" helpers in a case reducer
-      chapterAdapter.setAll(state, action.payload)
+      chapterAdapter.setAll(state, action.payload);
     },
   },
-})
-
-
+});
 
 export const {
   selectById: selectChapterById,
   selectIds: selectChapterIds,
   selectEntities: selectChapterEntities,
   selectAll: selectAllChapters,
-  selectTotal: selectTotalChapters
-} = chapterAdapter.getSelectors<RootState>((state) => state.chapters)
-export default chapterSlice
+  selectTotal: selectTotalChapters,
+} = chapterAdapter.getSelectors<RootState>((state) => state.chapters);
+export default chapterSlice;
