@@ -9,11 +9,7 @@ const SingleGroupPage = () => {
     selectGroupById(state, groupId as EntityId)
   );
   const navigate = useNavigate();
-  const goBack = () => {
-    navigate({
-      pathname: `/groups/`,
-    });
-  };
+
   if (!thisGroup) {
     return (
       <>
@@ -25,7 +21,7 @@ const SingleGroupPage = () => {
     <>
       <h2>{thisGroup.title}</h2>
       <p>{thisGroup.id}</p>
-      <button onClick={() => goBack()}> Go back </button>
+      <button onClick={() => navigate(-1)}> Go back </button>
     </>
   );
 };

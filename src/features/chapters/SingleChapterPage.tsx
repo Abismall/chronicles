@@ -9,11 +9,7 @@ const SingleChapterPage = () => {
     selectChapterById(state, chapterId as EntityId)
   );
   const navigate = useNavigate();
-  const goBack = () => {
-    navigate({
-      pathname: `/chapters/`,
-    });
-  };
+
   if (!thisChapter) {
     return (
       <>
@@ -25,7 +21,7 @@ const SingleChapterPage = () => {
     <>
       <h2>{thisChapter.title}</h2>
       <p>{thisChapter.id}</p>
-      <button onClick={() => goBack()}> Go back </button>
+      <button onClick={() => navigate(-1)}> Go back </button>
     </>
   );
 };
