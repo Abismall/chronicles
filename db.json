@@ -1,0 +1,48 @@
+{"chapters":
+[{
+    "id": "21321321321534656dfgdfgdfgdfgdfg",
+    "title": "First chapter"
+},
+{
+    "id": "2132132132153234234244656dfgdfgdfgdfgdfg",
+    "title": "Second chapter"
+},
+{
+    "id": "213213213215323423344656dfgdfgdfgdfgdfg",
+    "title": "Third chapter"
+},
+{
+    "id": "2132132132143434534656dfgdfgdfgdfgdfg",
+    "title": "Fourth chapter"
+},
+{
+    "id": "213213213322221534656dfgdfgdfgdfgdfg",
+    "title": "Fifth chapter"
+},
+{
+    "id": "21321324342341321534656dfgdfgdfgdfgdfg",
+    "title": "Sixth chapter"
+}
+],
+"Groups": [
+  {
+    "id": "21321324434434132",
+    "title": "First Group"
+  },
+    {
+    "id": "213213233332132",
+    "title": "Second Group"
+  },
+    {
+    "id": "21321343432132",
+    "title": "Third Group"
+  },
+    {
+    "id": "2132132333132",
+    "title": "Fifth Group"
+  },  {
+    "id": "2132133442132",
+    "title": "Sixth Group"
+  }
+]
+}
