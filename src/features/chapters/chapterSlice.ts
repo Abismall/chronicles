@@ -4,14 +4,11 @@ import {
 } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store';
 
-type Chapter = {
-    id: string;
-    title: string;
-}
 
 
-const chapterAdapter = createEntityAdapter<Chapter>({
-    selectId: (chapter: Chapter) => chapter.id,
+
+const chapterAdapter = createEntityAdapter<State.Chapter>({
+    selectId: (chapter) => chapter.id,
     sortComparer: (a, b) => a.title.localeCompare(b.title),
 })
 

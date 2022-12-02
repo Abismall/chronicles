@@ -6,9 +6,11 @@ import {
   createSearchParams,
   useNavigate,
 } from 'react-router-dom';
+
 interface ChapterExcerptProps {
   id: EntityId;
 }
+
 const ChapterExcerpt = (props: ChapterExcerptProps) => {
   const { id } = props;
   const chapter = useAppSelector((state) =>

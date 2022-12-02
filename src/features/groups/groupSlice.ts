@@ -4,14 +4,10 @@ import {
 } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store';
 
-type Group = {
-    id: string;
-    title: string;
-}
 
 
-const groupAdapter = createEntityAdapter<Group>({
-    selectId: (Group: Group) => Group.id,
+const groupAdapter = createEntityAdapter<State.Group>({
+    selectId: (Group: State.Group) => Group.id,
     sortComparer: (a, b) => a.title.localeCompare(b.title),
 })
 
