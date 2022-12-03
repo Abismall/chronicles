@@ -4,7 +4,7 @@ import {
 } from '@reduxjs/toolkit/query/react';
 
 export const apiSlice = createApi({
-  reducerPath: 'api', // optional
+  reducerPath: 'api',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3500' }),
   tagTypes: ['Chapter', 'User', 'Group'],
   endpoints: (builder) => ({}),

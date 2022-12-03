@@ -1,11 +1,7 @@
 import { selectChapterById } from './chapterSlice';
 import { useAppSelector } from '../../hooks/hooks';
 import { EntityId } from '@reduxjs/toolkit';
-import {
-  Link,
-  createSearchParams,
-  useNavigate,
-} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 interface ChapterExcerptProps {
   id: EntityId;
